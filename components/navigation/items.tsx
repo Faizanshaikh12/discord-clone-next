@@ -11,7 +11,7 @@ interface NavigationItemProps {
     name: string;
 }
 
-export const NavigationItem = async ({id, name, imageUrl}: NavigationItemProps) => {
+export const NavigationItem = ({id, name, imageUrl}: NavigationItemProps) => {
     const params = useParams()
     const router = useRouter()
 
