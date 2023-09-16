@@ -6,6 +6,7 @@ import {ThemeProviderProps} from "next-themes/dist/types"
 import {useEffect, useState} from "react";
 import {CreateServerModal} from "../modals/create-server-modal";
 import {InviteModal} from "../modals/invite-modal";
+import {EditServerModal} from "../modals/edit-server-modal";
 
 export function ModalProvider() {
     const [mounted, setMounted] = useState(false);
@@ -18,6 +19,7 @@ export function ModalProvider() {
         <>
             <CreateServerModal/>
             <InviteModal/>
+            <EditServerModal/>
         </>
     )
 }
