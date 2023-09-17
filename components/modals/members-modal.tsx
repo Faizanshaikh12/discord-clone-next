@@ -2,7 +2,18 @@ import {MemberRole} from "@prisma/client"
 import qs from "query-string";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "../ui/dialog"
 import {useModal} from "../../hooks/use-model-store";
-import {Check, Copy, Gavel, Loader2, MoreVertical, RefreshCw, Shield, ShieldCheck, ShieldQuestion} from "lucide-react";
+import {
+    Check,
+    Copy,
+    Gavel,
+    Loader2,
+    MoreVertical,
+    RefreshCw,
+    Shield,
+    ShieldAlert,
+    ShieldCheck,
+    ShieldQuestion
+} from "lucide-react";
 import {useState} from "react";
 import axios from "axios";
 import {ServerWithMemberWithProfile} from "../../types";
@@ -20,7 +31,7 @@ import {useRouter} from "next/navigation";
 const roleIconMap = {
     "GUEST": null,
     "MODERATOR": <ShieldCheck className="h-4 w-4 ml-2 text-indigo-500"/>,
-    "ADMIN": <ShieldCheck className="h-4 w-4 text-rose-500"/>,
+    "ADMIN": <ShieldAlert className="h-4 w-4 text-rose-500"/>,
 }
 
 export const MembersModal = () => {
