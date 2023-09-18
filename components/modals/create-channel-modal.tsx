@@ -11,6 +11,7 @@ import axios from "axios";
 import {useParams, useRouter} from "next/navigation";
 import {useModal} from "../../hooks/use-model-store";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "../ui/select";
+import {useEffect} from "react";
 
 const formSchema = z.object({
     name: z.string()
@@ -20,29 +21,38 @@ const formSchema = z.object({
 })
 
 export const CreateChannelModal = () => {
-    const {type, isOpen, onClose} = useModal();
+    const {type, isOpen, onClose, data} = useModal();
+    const {channelType} = data;
     const router = useRouter();
     const params = useParams();
 
     const isModalOpen = isOpen && type === 'createChannel'
-
+    console.log("channelType", channelType)
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: '',
-            type: ChannelType.TEXT,
+            type: channelType || ChannelType.TEXT,
         }
     })
 
     const isLoading = form.formState.isSubmitting;
 
+    useEffect(() => {
+        if (channelType) {
+            form.setValue('type', channelType)
+        } else {
+            form.setValue('type', ChannelType.TEXT)
+        }
+    }, [channelType])
+
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
-          const url = qs.stringifyUrl({
-              url: "/api/channels",
-              query: {
-                  serverId: params?.serverId
-              }
+            const url = qs.stringifyUrl({
+                url: "/api/channels",
+                query: {
+                    serverId: params?.serverId
+                }
             })
 
             await axios.post(url, values);
