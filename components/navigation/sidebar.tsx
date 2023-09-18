@@ -24,7 +24,7 @@ export const Sidebar = async () => {
     })
 
     return (
-        <div className="space-y-4 flex flex-col dark:bg-[#1E1F22] h-full text-primary w-full py-3">
+        <div className="space-y-4 flex flex-col dark:bg-[#1E1F22] bg-[#E3E5E8] h-full text-primary w-full py-3">
             <Actions/>
             <Separator className="h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto"/>
             <ScrollArea className="flex-1 w-full">
