@@ -9,7 +9,7 @@ import {Button} from "../ui/button";
 import {FileUpload} from "../file-upload";
 import axios from "axios";
 import {useRouter} from "next/navigation";
-import {useModal} from "../../hooks/use-model-store";
+import {useModal} from "../../hooks/use-modal-store";
 import {useEffect} from "react";
 
 const formSchema = z.object({

@@ -1,7 +1,7 @@
 import {MemberRole} from "@prisma/client"
 import qs from "query-string";
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "../ui/dialog"
-import {useModal} from "../../hooks/use-model-store";
+import {useModal} from "../../hooks/use-modal-store";
 import {
     Check,
     Copy,

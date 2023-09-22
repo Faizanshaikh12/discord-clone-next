@@ -1,5 +1,5 @@
 import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle} from "../ui/dialog"
-import {useModal} from "../../hooks/use-model-store";
+import {useModal} from "../../hooks/use-modal-store";
 import {Button} from "../ui/button";
 import {useState} from "react";
 import axios from "axios";

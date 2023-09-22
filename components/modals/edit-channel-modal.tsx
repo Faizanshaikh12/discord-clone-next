@@ -9,7 +9,7 @@ import {Button} from "../ui/button";
 import {ChannelType} from "@prisma/client"
 import axios from "axios";
 import {useParams, useRouter} from "next/navigation";
-import {useModal} from "../../hooks/use-model-store";
+import {useModal} from "../../hooks/use-modal-store";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "../ui/select";
 import {useEffect} from "react";
 
