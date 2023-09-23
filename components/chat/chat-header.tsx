@@ -24,7 +24,7 @@ export const ChatHeader = ({serverId, imageUrl, type, name}: ChatHeaderProps) =>
             <p className="font-semibold text-md text-black dark:text-white">
                 {name}
             </p>
-            <div className="ml-auto">
+            <div className="ml-auto flex items-center">
                 <SocketIndicator/>
             </div>
         </div>

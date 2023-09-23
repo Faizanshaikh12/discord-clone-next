@@ -11,7 +11,6 @@ import {Input} from "../ui/input";
 import axios from "axios";
 import {useModal} from "../../hooks/use-modal-store";
 import {EmojiPicker} from "../emoji-picker";
-import {router} from "next/client";
 import {useRouter} from "next/navigation";
 
 interface ChatInputProps {
